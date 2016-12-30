@@ -17,6 +17,7 @@ class ViewController: UIViewController {
             print("还剩下"+"\(time)"+"秒")
         }) { (time) in
             print("结束了")
+            LSTimeCountdown.shared.ls_cancelCountDwonTask(key: "aa")
         }
         
         LSTimeCountdown.shared.ls_scheduledCountDownTime(key: "aa", timeInteval: 120, countingDown: { (time) in

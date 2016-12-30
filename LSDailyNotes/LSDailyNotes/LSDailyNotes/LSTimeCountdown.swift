@@ -79,17 +79,26 @@ class LSTimeCountdown: NSObject {
         return taskExits
     }
     
-    /**
-     *  取消所有倒计时任务
-     */
-    func cancelAllTask() {
+    /// 取消指定倒计时任务
+    ///
+    /// - Parameter key: 任务key
+    func ls_cancelCountDwonTask(key: String)  {
+        for (_, obj)  in pool.operations.enumerated() {
+            let temptask = obj as! LSTimeCountDownTask
+            if temptask.name == key {
+                temptask.cancel()
+                break
+            }
+        }
+    }
+
+    /// 取消所有倒计时任务
+    func ls_cancelAllCountDwonTask() {
         pool.cancelAllOperations()
     }
     
-    /**
-     *  挂起所有倒计时任务
-     */
-    private func suspendAllTask() {
+    /// 挂起所有倒计时任务
+    private func ls_suspendAllCountDwonTask() {
         pool.isSuspended = true
     }
 }
