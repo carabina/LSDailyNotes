@@ -179,7 +179,7 @@ func ls_restDate(time : TimeInterval) -> String {
     rest = rest - hour*60*60
     let min = rest/60
     let sec = rest%60
-    let date = String.init(format: "%02d天 %02d:%02d:%02d", day,hour,min,sec)
+    let date = String.init(format: "%d天 %02d:%02d:%02d", day,hour,min,sec)
     
     return date
 }
