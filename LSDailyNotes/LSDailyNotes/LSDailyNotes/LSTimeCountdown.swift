@@ -86,7 +86,9 @@ class LSTimeCountdown: NSObject {
         for (_, obj)  in pool.operations.enumerated() {
             let temptask = obj as! LSTimeCountDownTask
             if temptask.name == key {
-                temptask.cancel()
+                if !(temptask.isCancelled) {
+                    taskExits = true
+                }
                 break
             }
         }
