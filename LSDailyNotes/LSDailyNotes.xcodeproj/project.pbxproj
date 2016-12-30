@@ -12,6 +12,7 @@
 		31A894B61E15F74900049894 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31A894B41E15F74900049894 /* Main.storyboard */; };
 		31A894B81E15F74900049894 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31A894B71E15F74900049894 /* Assets.xcassets */; };
 		31A894BB1E15F74900049894 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31A894B91E15F74900049894 /* LaunchScreen.storyboard */; };
+		31A894C41E15F7CB00049894 /* LSLocalNoti.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A894C31E15F7CB00049894 /* LSLocalNoti.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		31A894B71E15F74900049894 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		31A894BA1E15F74900049894 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		31A894BC1E15F74900049894 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		31A894C31E15F7CB00049894 /* LSLocalNoti.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LSLocalNoti.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,12 +56,21 @@
 		31A894AF1E15F74900049894 /* LSDailyNotes */ = {
 			isa = PBXGroup;
 			children = (
+				31A894C21E15F78D00049894 /* LSDailyNotes */,
 				31A894B01E15F74900049894 /* AppDelegate.swift */,
 				31A894B21E15F74900049894 /* ViewController.swift */,
 				31A894B41E15F74900049894 /* Main.storyboard */,
 				31A894B71E15F74900049894 /* Assets.xcassets */,
 				31A894B91E15F74900049894 /* LaunchScreen.storyboard */,
 				31A894BC1E15F74900049894 /* Info.plist */,
+			);
+			path = LSDailyNotes;
+			sourceTree = "<group>";
+		};
+		31A894C21E15F78D00049894 /* LSDailyNotes */ = {
+			isa = PBXGroup;
+			children = (
+				31A894C31E15F7CB00049894 /* LSLocalNoti.swift */,
 			);
 			path = LSDailyNotes;
 			sourceTree = "<group>";
@@ -138,6 +149,7 @@
 			files = (
 				31A894B31E15F74900049894 /* ViewController.swift in Sources */,
 				31A894B11E15F74900049894 /* AppDelegate.swift in Sources */,
+				31A894C41E15F7CB00049894 /* LSLocalNoti.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +271,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LSDailyNotes/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = LS.LSDailyNotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -271,6 +284,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LSDailyNotes/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = LS.LSDailyNotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";

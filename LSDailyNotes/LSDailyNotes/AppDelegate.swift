@@ -13,9 +13,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        ///注册通知
+        ls_registerNoti()
+        
+        ///发起本地通知
+        ls_setLocalNoti(date:NSDate())
+        ///处理通知
+        ls_getLocalNoti(launchOptions:launchOptions)
         return true
     }
 
@@ -41,6 +49,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    /** 接收本地通知 */
+    func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
+        ls_getLocalNoti(notification: notification)
+    }
+    
 }
 
