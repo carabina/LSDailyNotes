@@ -72,7 +72,9 @@ class LSTimeCountdown: NSObject {
         for (_, obj)  in pool.operations.enumerated() {
             let temptask = obj as! LSTimeCountDownTask
             if temptask.name == key {
-                taskExits = true
+                if !(temptask.isCancelled) {
+                    taskExits = true
+                }
                 break
             }
         }
@@ -86,9 +88,7 @@ class LSTimeCountdown: NSObject {
         for (_, obj)  in pool.operations.enumerated() {
             let temptask = obj as! LSTimeCountDownTask
             if temptask.name == key {
-                if !(temptask.isCancelled) {
-                    taskExits = true
-                }
+                temptask.cancel()
                 break
             }
         }
@@ -118,8 +118,8 @@ extension LSTimeCountdown {
         let toTime = date.timeIntervalSince1970
         ///当前时间戳
         let fromTime = Date().timeIntervalSince1970
-        
-        ls_scheduledCountDownTime(key: key, timeInteval: toTime-fromTime, countingDown: { (time) in
+        let time = (toTime - fromTime)
+        ls_scheduledCountDownTime(key: key, timeInteval: TimeInterval(lroundf(Float(time))), countingDown: { (time) in
             let rest = ls_restDate(time: time)
             countingDown!(rest)
         }) { (time) in
