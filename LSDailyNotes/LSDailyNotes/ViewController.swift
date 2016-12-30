@@ -14,15 +14,23 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         LSTimeCountdown.shared.ls_scheduledCountDownTime(key: "time", timeInteval: 60, countingDown: { (time) in
-            print("还剩下"+"\(60-time)"+"秒")
+            print("还剩下"+"\(time)"+"秒")
         }) { (time) in
             print("结束了")
         }
         
         LSTimeCountdown.shared.ls_scheduledCountDownTime(key: "aa", timeInteval: 120, countingDown: { (time) in
-            print("还剩下"+"\(120-time)"+"秒")
+            print("还剩下"+"\(time)"+"秒")
         }) { (time) in
             print("结束了")
+        }
+        
+        ///到指定日期倒计时
+        let date = Date.init(timeInterval: 90112, since: Date())
+        LSTimeCountdown.shared.ls_scheduledCountDownTime(key: "date", date: date, countingDown: { (date) in
+            print("还剩下"+"\(date)")
+        }) { (date) in
+            print("还剩下"+"\(date)")
         }
     }
 
